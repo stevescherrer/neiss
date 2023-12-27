@@ -5,7 +5,7 @@ library(tidyverse)
 filter <- dplyr::filter
 
 pop_raw <- read_tsv(
-  "data-raw/Bridged-Race Population Estimates 1990-2017.txt",
+  "data-raw/Bridged-Race Population Estimates 2000-2023.txt",
   col_types = cols(
     .default = col_skip(),
     `Yearly July 1st Estimates` = col_integer(),
@@ -26,7 +26,7 @@ population <- pop_raw %>%
     sex = "Gender",
     n = "Population"
   ) %>%
-  filter(year >= 2013, year <= 2017, age >= 0, age <= 84) %>%
+  filter(year >= 2000, year <= 2023, age >= 0, age <= 84) %>%
   mutate(sex = str_to_lower(sex))
 
 use_data(population, overwrite = TRUE)
