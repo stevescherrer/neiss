@@ -5,8 +5,8 @@ library(fs)
 # Ensure we have local copy -----------------------------------------------
 
 # only take last five years to keep data in GitHub's limits
-latest <- 2017
-year <- (latest - 5 + 1):latest
+latest <- 2023
+year <- (latest - 20 + 1):latest
 
 names <- str_glue("{year}/neiss{year}.xlsx")
 local <- path("data-raw", path_file(names))
